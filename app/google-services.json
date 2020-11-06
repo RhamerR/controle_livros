@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "438608258080",
+    "firebase_url": "https://controlelivros-c333b.firebaseio.com",
+    "project_id": "controlelivros-c333b",
+    "storage_bucket": "controlelivros-c333b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438608258080:android:677471893def6bae5e4845",
+        "android_client_info": {
+          "package_name": "com.example.controle_livros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438608258080-lvf14gpj8b965mkssur1gg1mrhn75plc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.controle_livros",
+            "certificate_hash": "e5454dda6b8354723ce562129a6f2a394d1af4ae"
+          }
+        },
+        {
+          "client_id": "438608258080-2iub94reabbhc7lfppt3fcuk2fs4pt6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg-lWd-7OtpV6v4LifXRZ9ZQ8kLkeenho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438608258080-2iub94reabbhc7lfppt3fcuk2fs4pt6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
