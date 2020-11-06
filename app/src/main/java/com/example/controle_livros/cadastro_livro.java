@@ -58,8 +58,7 @@ public class cadastro_livro extends AppCompatActivity {
 
         l.setQuantidade(finalValue);
         l.setPagina_atual(0);
-        l.setIniciado(false);
-        l.setFinalizado(false);
+        l.setStatus("nao lido");
 
 
         databaseReference.child("Livro").child(l.getID()).setValue(l);
