@@ -1,30 +1,22 @@
 package com.example.controle_livros;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private FirebaseFirestore firebaseFirestore;
-    private RecyclerView mFirestoreList;
 
-    private FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,68 +34,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        mFirestoreList = findViewById(R.id.firestore_list);
-
-
-        // QUERY
-
-        Query query = firebaseFirestore.collection("Livro");
-
-        // Reclycle Options
-        FirestoreRecyclerOptions<model> options = new FirestoreRecyclerOptions.Builder<model>()
-                .setQuery(query, model.class)
-                .build();
-        adapter = new FirestoreRecyclerAdapter<model, livrosViewHolder>(options) {
-            @NonNull
-            @Override
-            public livrosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_livro, parent, false);
-
-
-
-                return new livrosViewHolder(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull livrosViewHolder livrosViewHolder, int i, @NonNull model livros) {
-
-                livrosViewHolder.list_nome.setText(livros.getNome());
-                livrosViewHolder.list_autor.setText(livros.getAutor());
-
-            }
-        };
-
-        mFirestoreList.setHasFixedSize(true);
-        mFirestoreList.setLayoutManager(new LinearLayoutManager(this));
-        mFirestoreList.setAdapter(adapter);
-
     }
 
 
-    private class livrosViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView list_nome;
-        private TextView list_autor;
-
-        public livrosViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            list_nome = itemView.findViewById(R.id.list_nome);
-            list_autor = itemView.findViewById(R.id.list_autor);
-
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
 }
