@@ -7,6 +7,7 @@ public class livros {
     private String titulo;
     private String autor;
     private Integer Quantidade;
+    private Integer Pagina_atual;
     private boolean iniciado;
     private boolean finalizado;
 
@@ -47,12 +48,20 @@ public class livros {
         this.autor = autor;
     }
 
-    public Integer getQuantidade(int i) {
+    public Integer getQuantidade() {
         return Quantidade;
     }
 
     public void setQuantidade(Integer quantidade) {
         Quantidade = quantidade;
+    }
+
+    public Integer getPagina_atual() {
+        return Pagina_atual;
+    }
+
+    public void setPagina_atual(Integer pagina_atual) {
+        Pagina_atual = pagina_atual;
     }
 
     public boolean isIniciado() {
@@ -70,6 +79,4 @@ public class livros {
     public void setFinalizado(boolean finalizado) {
         this.finalizado = finalizado;
     }
-
-
 }

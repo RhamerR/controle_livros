@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.controle_livros.classes.livros;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -46,19 +47,31 @@ public class cadastro_livro extends AppCompatActivity {
     }
 
     public void salvar (View view){
+
+
         livros l = new livros();
         l.setID(UUID.randomUUID().toString());
         l.setNome(edit_nome.getText().toString());
         l.setTitulo(edit_titulo.getText().toString());
         l.setAutor(edit_autor.getText().toString());
-        l.getQuantidade(Integer.parseInt(edit_quantidade.getText().toString()));
+
+        String value= edit_quantidade.getText().toString();
+        int finalValue=Integer.parseInt(value);
+
+        l.setQuantidade(finalValue);
+        l.setPagina_atual(0);
+        l.setIniciado(false);
+        l.setFinalizado(false);
+
+
         databaseReference.child("Livro").child(l.getID()).setValue(l);
 
+        finish();
 
     }
 
     public void cancelar (View view){
-        //faça algo
+        finish();
     }
 
 
