@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button nomeParaOBotao = (Button) findViewById(R.id.chamar_cadastro_livro);
+
+        // CHAMAR TELA DE CADASTRO
         nomeParaOBotao.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent it = new Intent(MainActivity.this, cadastro_livro.class);

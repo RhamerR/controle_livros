@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/cadastro_nome"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/cadastro_titulo"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -73,10 +73,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastro_nome" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/cadastro_autor"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -88,10 +88,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastro_titulo" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/botao_cencelar"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -101,11 +101,11 @@
         android:layout_marginBottom="16dp"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintEnd_toStartOf="@+id/botao_cancelar"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/botao_cancelar"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -116,7 +116,7 @@
         android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button6" />
+        app:layout_constraintStart_toEndOf="@+id/botao_cencelar" />
 
     <TextView
         android:id="@+id/textView"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/cadastro_paginas"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -161,6 +161,6 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastro_autor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
