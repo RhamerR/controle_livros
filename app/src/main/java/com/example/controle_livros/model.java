@@ -1,6 +1,6 @@
 package com.example.controle_livros;
 
-public class livros {
+public class model {
 
     private String ID;
     private String nome;
@@ -8,14 +8,22 @@ public class livros {
     private String autor;
     private Integer Quantidade;
     private Integer Pagina_atual;
-    private boolean iniciado;
-    private boolean finalizado;
+    private String Status;
 
 
-    public livros() {
+    public model() {
 
     }
-//
+
+    public model(String ID, String nome, String titulo, String autor, Integer quantidade, Integer pagina_atual, String status) {
+        this.ID = ID;
+        this.nome = nome;
+        this.titulo = titulo;
+        this.autor = autor;
+        Quantidade = quantidade;
+        Pagina_atual = pagina_atual;
+        Status = status;
+    }
 
     public String getID() {
         return ID;
@@ -65,19 +73,11 @@ public class livros {
         Pagina_atual = pagina_atual;
     }
 
-    public boolean isIniciado() {
-        return iniciado;
+    public String getStatus() {
+        return Status;
     }
 
-    public void setIniciado(boolean iniciado) {
-        this.iniciado = iniciado;
-    }
-
-    public boolean isFinalizado() {
-        return finalizado;
-    }
-
-    public void setFinalizado(boolean finalizado) {
-        this.finalizado = finalizado;
+    public void setStatus(String status) {
+        Status = status;
     }
 }

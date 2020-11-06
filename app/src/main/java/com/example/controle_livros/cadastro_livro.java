@@ -47,7 +47,7 @@ public class cadastro_livro extends AppCompatActivity {
     public void salvar (View view){
 
 
-        livros l = new livros();
+        model l = new model();
         l.setID(UUID.randomUUID().toString());
         l.setNome(edit_nome.getText().toString());
         l.setTitulo(edit_titulo.getText().toString());

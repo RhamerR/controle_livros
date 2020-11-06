@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         Query query = firebaseFirestore.collection("Livro");
 
         // Reclycle Options
-        FirestoreRecyclerOptions<livros> options = new FirestoreRecyclerOptions.Builder<livros>()
-                .setQuery(query, livros.class)
+        FirestoreRecyclerOptions<model> options = new FirestoreRecyclerOptions.Builder<model>()
+                .setQuery(query, model.class)
                 .build();
-        adapter = new FirestoreRecyclerAdapter<livros, livrosViewHolder>(options) {
+        adapter = new FirestoreRecyclerAdapter<model, livrosViewHolder>(options) {
             @NonNull
             @Override
             public livrosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull livrosViewHolder livrosViewHolder, int i, @NonNull livros livros) {
+            protected void onBindViewHolder(@NonNull livrosViewHolder livrosViewHolder, int i, @NonNull model livros) {
 
                 livrosViewHolder.list_nome.setText(livros.getNome());
                 livrosViewHolder.list_autor.setText(livros.getAutor());
